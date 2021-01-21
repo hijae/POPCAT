@@ -15,25 +15,13 @@
             var audio2=document.getElementById('audio_pop2');
             if(flag==1) {
                 img1.src="src/pop2.jpg";
-                flag=0;
-                if (audio1.paused) { 
-                    audio1.play(); 
-                }
-                else { 
-                    audio1.pause(); 
-                    audio1.currentTime = 0 
-                }
+                flag=0; 
+                audio1.play();
             }
             else {
                 img1.src="src/pop1.jpg";
                 flag=1;
-                if (audio2.paused) { 
-                    audio2.play(); 
-                }
-                else {
-                    audio2.pause();
-                    audio2.currentTime = 0
-                }
+                audio2.play();
             }
         }
     </script>
