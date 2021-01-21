@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>POP CAT</title>
+    <style type="text/css">
+    </style>
+    <audio id='audio_pop1' src='./src/pop1.mp3'></audio>
+    <audio id='audio_pop2' src='./src/pop2.mp3'></audio> 
+    <script>
+        var flag=0;
+        function imgToggle() {
+            var img1=document.getElementById("img1");
+            var audio1=document.getElementById('audio_pop1');
+            var audio2=document.getElementById('audio_pop2');
+            if(flag==1) {
+                img1.src="src/pop2.jpg";
+                flag=0;
+                if (audio1.paused) { 
+                    audio1.play(); 
+                }
+                else { 
+                    audio1.pause(); 
+                    audio1.currentTime = 0 
+                }
+            }
+            else {
+                img1.src="src/pop1.jpg";
+                flag=1;
+                if (audio2.paused) { 
+                    audio2.play(); 
+                }
+                else {
+                    audio2.pause();
+                    audio2.currentTime = 0
+                }
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <img scr="./src/pop1.jpg" onclick="imgToggle()" id="img1">
+        <input type="button" value="시작" onclick="imgToggle()">
+    </body>
+</html>
